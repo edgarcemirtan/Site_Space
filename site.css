@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle, #050540, #01011f);
+    color: white;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 120px;
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+    border-left: 8px solid #c0602c;
+    border-right: 8px solid #c0602c;
+    border-top: 8px solid #c0602c;
+    border-bottom: 8px solid #c0602c;
+    border-radius: 30px 30px 30px 30px;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(1px 1px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 80% 40%, white, transparent),
+        radial-gradient(1px 1px at 50% 80%, white, transparent),
+        radial-gradient(1px 1px at 10% 70%, white, transparent),
+        radial-gradient(1px 1px at 90% 90%, white, transparent);
+    background-size: 300px 300px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(6px);
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+main {
+    position: relative;
+    width: 80%;
+    margin: 40px auto;
+    padding: 50px;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 22px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    justify-items: center;
+}
+
+.card {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 4px solid white;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 0 20px rgba(192, 96, 44, 0.3);
+    border-radius: 8px;
+}
+
+.card:hover img {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 140, 60, 0.6);
+}
+
+.card span {
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.section-title {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
