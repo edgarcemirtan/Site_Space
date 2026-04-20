@@ -81,9 +81,10 @@ main {
 
 .object {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 40px;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 20px;
     align-items: center;
+    position: relative;
 }
 
 .object:nth-child(even) {
@@ -91,6 +92,7 @@ main {
 }
 
 .object:nth-child(even) img {
+    transform: translateY(10px);
     order: 2;
 }
 
@@ -105,7 +107,7 @@ main {
 }
 
 .object:hover img {
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(0);
 }
 
 .object .info h3 {
@@ -129,4 +131,25 @@ main {
 
 .tab-content.active {
     display: flex;
+}
+
+
+.object:nth-child(odd) img {
+    transform: translateY(-10px);
+}
+
+.object .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    
+    width: 320px;
+    background: rgba(0,0,0,0.85);
+    padding: 15px;
+    border-radius: 12px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
 }
